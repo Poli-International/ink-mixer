@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ink Mixer | Poli International">
+    <meta property="og:description" content="Mix custom tattoo ink colors with precise ratios. Color matching and formula saving for professional tattoo artists.">
+    <meta property="og:url" content="https://poliinternational.com/ink-mixer/">
+    <meta property="og:site_name" content="Poli International">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ink Mixer | Poli International">
+    <meta name="twitter:description" content="Mix custom tattoo ink colors with precise ratios. Color matching and formula saving for professional tattoo artists.">
+    <meta name="twitter:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Tattoo Ink Color Mixer & Formula Calculator - Poli International</title>
+    <meta name="description" content="Professional tattoo ink color mixing calculator. Calculate precise ratios, save custom formulas, mix skin tones, create gray washes. Professional tool for tattoo artists.">
+    <meta name="keywords" content="tattoo ink mixing, tattoo color mixing calculator, skin tone tattoo ink, gray wash calculator, tattoo color formulas, tattoo ink ratios">
+    <link rel="stylesheet" href="css/style.css">
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tattoo Ink Mixer & Palette Creator",
+  "url": "https://poliinternational.com/tools/ink-mixer/",
+  "description": "Mix colors and create custom ink palettes",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "codeRepository": "https://github.com/poli-international/ink-mixer",
+  "author": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com",
+    "sameAs": [
+      "https://github.com/poli-international"
+    ]
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com"
+  },
+  "maintainer": {
+    "@type": "Organization",
+    "name": "Poli International",
+    "url": "https://poliinternational.com"
+  },
+  "dateModified": "2026-02-07",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true
+}
+</script>
+
+<style>
+/* Breadcrumb Styles */
+.breadcrumb-nav {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-nav a {
+    color: #0693e3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb-nav a:hover {
+    color: #0575be;
+    text-decoration: underline;
+}
+
+.breadcrumb-nav span {
+    color: #666;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-nav strong {
+    color: #333;
+}
+
+/* Dark mode breadcrumb */
+body.dark-mode .breadcrumb-nav span {
+    color: #999;
+}
+
+body.dark-mode .breadcrumb-nav a {
+    color: #60a5fa;
+}
+
+body.dark-mode .breadcrumb-nav strong {
+    color: #e0e0e0;
+}
+</style>
+</head>
+<body>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="https://poliinternational.com/">Home</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/">Tools</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/#tattoo-tools">Tattoo Tools</a>
+    <span>›</span>
+    <strong>Ink Mixer</strong>
+</nav>
+
+    <!-- Top Navigation Header (matching homepage style) -->
+    <header class="site-header">
+        <div class="site-header__container">
+            <a href="https://poliinternational.com/" class="site-header__logo-link">
+                <img src="images/Poli-International-Co.webp" alt="Poli International" class="site-header__logo">
+            </a>
+            <nav class="site-nav">
+                <a href="https://poliinternational.com/" class="site-nav__link">HOME</a>
+                <a href="https://poliinternational.com/who-we-are/" class="site-nav__link">ABOUT</a>
+                <a href="https://poliinternational.com/our-creation/" class="site-nav__link">INNOVATION</a>
+                <a href="https://poliinternational.com/they-trust-us/" class="site-nav__link">They trust us!</a>
+                <a href="https://poliinternational.com/contact-us/" class="site-nav__link">CONTACT</a>
+            </nav>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tool Title Section -->
+    <section class="tool-title-section">
+        <div class="container">
+            <h1 class="tool-title">Professional Tattoo Ink Color Mixer</h1>
+<!-- GitHub CTA -->
+<div class='github-cta' style='margin: 1.5rem 0;'>
+  <a href='https://github.com/poli-international/ink-mixer' 
+     target='_blank' rel='noopener noreferrer' class='btn-github' 
+     style='display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #24292e; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 500;'>
+    <svg width='20' height='20' viewBox='0 0 16 16' fill='currentColor'>
+      <path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/>
+    </svg>
+    <span>View on GitHub</span>
+  </a>
+</div>
+<!-- GitHub Stats -->
+<div class='github-stats' style='display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;'>
+  <img src='https://img.shields.io/github/stars/poli-international/ink-mixer?style=social' alt='Stars' loading='lazy'>
+  <img src='https://img.shields.io/github/last-commit/poli-international/ink-mixer' alt='Last commit' loading='lazy'>
+</div>
+
+            <p class="tool-subtitle">Mix custom ink colors • Save your recipes • Professional color matching</p>
+        </div>
+    </section>
+
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER -->
+    <header class="ink-mixer__header">
+        <div class="ink-mixer__header-content">
+            <!-- Logo -->
+            
+
+            <!-- Title Group -->
+            <div class="ink-mixer__title-group">
+                <h2 class="ink-mixer__header-title">Professional Tattoo Ink Color Mixer & Formula Calculator</h2>
+                <p class="ink-mixer__header-subtitle">
+                    Calculate precise tattoo ink color mixtures, save custom formulas, and master color theory
+                </p>
+            </div>
+
+            <!-- Header Buttons -->
+            <div class="ink-mixer__header-buttons">
+                <button id="embedBtn" class="ink-mixer__embed-button" aria-label="Open embed options">
+                    <span class="embed-icon">⚡</span>
+                    <span class="embed-text">Free Embed</span>
+                </button>
+                <a href='https://ko-fi.com/C0C81NEXBV' target='_blank' class="ink-mixer__kofi-button">
+                    <span class="kofi-icon">☕</span>
+                    <span class="kofi-text">Buy Me a Coffee</span>
+                </a>
+                <button id="darkModeToggle" class="ink-mixer__dark-mode-toggle" aria-label="Toggle dark/light mode">
+                    <span class="dark-mode-icon">◐</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <!-- Disclaimer Banner -->
+            <div class="ink-mixer__disclaimer">
+                <div class="ink-mixer__disclaimer-icon">⚠️</div>
+                <div class="ink-mixer__disclaimer-content">
+                    <strong>Important Disclaimer:</strong>
+                    <p>Color mixing results vary based on ink brands, skin type, and application technique. These formulas are guidelines - always test colors on practice skin before use on clients. Color preview is approximate and may not match actual result. Professional judgment and experience are essential.</p>
+                </div>
+            </div>
+
+            <!-- Tool Interface -->
+            <div class="tool-interface">
+
+                <!-- Tab Navigation -->
+                <div class="ink-mixer__tabs" role="tablist" aria-label="Ink mixer tool sections">
+                    <button class="ink-mixer__tab ink-mixer__tab--active" data-tab="mixer" role="tab" aria-selected="true" aria-controls="tab-mixer">
+                        🎨 Color Mixer
+                    </button>
+                    <button class="ink-mixer__tab" data-tab="library" role="tab" aria-selected="false" aria-controls="tab-library">
+                        📚 My Formulas
+                    </button>
+                    <button class="ink-mixer__tab" data-tab="skin-tones" role="tab" aria-selected="false" aria-controls="tab-skin-tones">
+                        👤 Skin Tones
+                    </button>
+                    <button class="ink-mixer__tab" data-tab="gray-wash" role="tab" aria-selected="false" aria-controls="tab-gray-wash">
+                        🌫️ Gray Wash
+                    </button>
+                    <button class="ink-mixer__tab" data-tab="color-wheel" role="tab" aria-selected="false" aria-controls="tab-color-wheel">
+                        🎡 Color Theory
+                    </button>
+                </div>
+
+                <!-- Tab 1: Color Mixer Calculator -->
+                <div id="tab-mixer" class="ink-mixer__tab-content ink-mixer__tab-content--active">
+                    <section class="ink-mixer__section">
+                        <h2 class="ink-mixer__section-title">
+                            <span class="ink-mixer__step-number">1</span>
+                            Select Colors to Mix
+                        </h2>
+
+                        <div id="colorSelectors" class="ink-mixer__color-selectors">
+                            <!-- Color 1 -->
+                            <div class="ink-mixer__color-row">
+                                <div class="ink-mixer__color-control">
+                                    <label class="ink-mixer__label">Color 1</label>
+                                    <select class="ink-mixer__select color-select" data-color-index="0">
+                                        <option value="">-- Select Color --</option>
+                                        <optgroup label="Primary Colors">
+                                            <option value="black">Black</option>
+                                            <option value="white">White</option>
+                                            <option value="red">Red</option>
+                                            <option value="yellow">Yellow</option>
+                                            <option value="blue">Blue</option>
+                                        </optgroup>
+                                        <optgroup label="Secondary Colors">
+                                            <option value="orange">Orange</option>
+                                            <option value="green">Green</option>
+                                            <option value="purple">Purple</option>
+                                        </optgroup>
+                                        <optgroup label="Earth Tones">
+                                            <option value="brown">Brown</option>
+                                        </optgroup>
+                                        <optgroup label="Specialty">
+                                            <option value="magenta">Magenta</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="ink-mixer__color-control">
+                                    <label class="ink-mixer__label">Parts</label>
+                                    <input type="number" class="ink-mixer__input parts-input" data-color-index="0" min="0.1" step="0.1" value="1" placeholder="1.0">
+                                </div>
+                                <button class="ink-mixer__btn-remove" data-color-index="0" style="visibility: hidden;">✕</button>
+                            </div>
+
+                            <!-- Color 2 -->
+                            <div class="ink-mixer__color-row">
+                                <div class="ink-mixer__color-control">
+                                    <label class="ink-mixer__label">Color 2</label>
+                                    <select class="ink-mixer__select color-select" data-color-index="1">
+                                        <option value="">-- Select Color --</option>
+                                        <optgroup label="Primary Colors">
+                                            <option value="black">Black</option>
+                                            <option value="white">White</option>
+                                            <option value="red">Red</option>
+                                            <option value="yellow">Yellow</option>
+                                            <option value="blue">Blue</option>
+                                        </optgroup>
+                                        <optgroup label="Secondary Colors">
+                                            <option value="orange">Orange</option>
+                                            <option value="green">Green</option>
+                                            <option value="purple">Purple</option>
+                                        </optgroup>
+                                        <optgroup label="Earth Tones">
+                                            <option value="brown">Brown</option>
+                                        </optgroup>
+                                        <optgroup label="Specialty">
+                                            <option value="magenta">Magenta</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="ink-mixer__color-control">
+                                    <label class="ink-mixer__label">Parts</label>
+                                    <input type="number" class="ink-mixer__input parts-input" data-color-index="1" min="0.1" step="0.1" value="1" placeholder="1.0">
+                                </div>
+                                <button class="ink-mixer__btn-remove" data-color-index="1" style="visibility: hidden;">✕</button>
+                            </div>
+                        </div>
+
+                        <button id="addColorBtn" class="ink-mixer__btn ink-mixer__btn--secondary">
+                            + Add Another Color
+                        </button>
+
+                        <div class="ink-mixer__volume-control">
+                            <label class="ink-mixer__label">Total Volume Needed</label>
+                            <div class="ink-mixer__input-group">
+                                <input type="number" id="totalVolume" class="ink-mixer__input" min="0.1" step="0.1" value="5" placeholder="5.0">
+                                <select id="volumeUnit" class="ink-mixer__select ink-mixer__select--small">
+                                    <option value="ml">ml</option>
+                                    <option value="caps">caps (1 cap ≈ 2ml)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button id="calculateMixBtn" class="ink-mixer__btn ink-mixer__btn--primary">
+                            🧪 Calculate Mixture
+                        </button>
+                    </section>
+
+                    <!-- Results Section -->
+                    <section id="mixerResults" class="ink-mixer__section" style="display: none;">
+                        <h2 class="ink-mixer__section-title">
+                            <span class="ink-mixer__step-number">2</span>
+                            Your Color Formula
+                        </h2>
+
+                        <div class="ink-mixer__results-card">
+                            <!-- Color Preview -->
+                            <div class="ink-mixer__color-preview">
+                                
+                                <p class="ink-mixer__swatch-note">Approximate color preview</p>
+                            </div>
+
+                            <!-- Ratio Display -->
+                            <div class="ink-mixer__ratio-display">
+                                <h3>Ratio Formula</h3>
+                                
+                            </div>
+
+                            <!-- Measurements Table -->
+                            <div class="ink-mixer__measurements">
+                                <h3>Exact Measurements</h3>
+                                <table class="ink-mixer__table">
+                                    <thead>
+                                        <tr>
+                                            <th>Color</th>
+                                            <th>Parts</th>
+                                            <th>Volume (ml)</th>
+                                            <th>Drops</th>
+                                            <th>Percentage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="measurementsTableBody">
+                                        <!-- Populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Save Formula Section -->
+                            <div class="ink-mixer__save-section">
+                                <h3>Save This Formula</h3>
+                                <div class="ink-mixer__form-group">
+                                    <label class="ink-mixer__label">Formula Name</label>
+                                    <input type="text" id="formulaName" class="ink-mixer__input" placeholder="e.g., Light Caucasian Skin">
+                                </div>
+                                <div class="ink-mixer__form-group">
+                                    <label class="ink-mixer__label">Notes (Optional)</label>
+                                    <textarea id="formulaNotes" class="ink-mixer__textarea" placeholder="e.g., Works well for portraits, adjust red for warmth"></textarea>
+                                </div>
+                                <div class="ink-mixer__form-group">
+                                    <label class="ink-mixer__label">Tags (comma-separated)</label>
+                                    <input type="text" id="formulaTags" class="ink-mixer__input" placeholder="e.g., portrait, skin, realism">
+                                </div>
+                                <div class="ink-mixer__button-group">
+                                    <button id="saveFormulaBtn" class="ink-mixer__btn ink-mixer__btn--success">
+                                        💾 Save Formula
+                                    </button>
+                                    <button id="downloadMixesBtn" class="ink-mixer__btn ink-mixer__btn--info" disabled>
+                                        📥 Download All Mixes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab 2: Formula Library -->
+                <div id="tab-library" class="ink-mixer__tab-content">
+                    <section class="ink-mixer__section">
+                        <div class="ink-mixer__library-header">
+                            <h2 class="ink-mixer__section-title">My Saved Formulas</h2>
+                            <div class="ink-mixer__library-actions">
+                                <button id="importFormulasBtn" class="ink-mixer__btn ink-mixer__btn--secondary">
+                                    📥 Import
+                                </button>
+                                <button id="exportFormulasBtn" class="ink-mixer__btn ink-mixer__btn--secondary">
+                                    📤 Export
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ink-mixer__search-bar">
+                            <input type="text" id="formulaSearch" class="ink-mixer__input" placeholder="🔍 Search formulas by name, notes, or tags...">
+                        </div>
+
+                        <div id="formulaLibrary" class="ink-mixer__formula-library">
+                            <p class="ink-mixer__empty-state">No saved formulas yet. Create and save your first formula from the Color Mixer tab!</p>
+                        </div>
+                    </section>
+
+                    <!-- Common Formulas Section -->
+                    <section class="ink-mixer__section">
+                        <h2 class="ink-mixer__section-title">Professional Formula Library</h2>
+                        <p class="ink-mixer__helper-text">Click any formula to load it in the mixer</p>
+
+                        <div class="ink-mixer__common-formulas">
+                            <h3>Skin Tones</h3>
+                            <div id="commonSkinTones" class="ink-mixer__formula-grid">
+                                <!-- Populated by JavaScript -->
+                            </div>
+
+                            <h3>Portrait Details</h3>
+                            <div id="commonPortrait" class="ink-mixer__formula-grid">
+                                <!-- Populated by JavaScript -->
+                            </div>
+
+                            <h3>Grays & Neutrals</h3>
+                            <div id="commonGrays" class="ink-mixer__formula-grid">
+                                <!-- Populated by JavaScript -->
+                            </div>
+
+                            <h3>Landscape Colors</h3>
+                            <div id="commonLandscape" class="ink-mixer__formula-grid">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab 3: Skin Tone Mixer -->
+                <div id="tab-skin-tones" class="ink-mixer__tab-content">
+                    <section class="ink-mixer__section">
+                        <h2 class="ink-mixer__section-title">Skin Tone Mixing Guide</h2>
+                        <p class="ink-mixer__helper-text">Select skin tone type to get base, highlight, and shadow formulas</p>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__label">Skin Tone Category</label>
+                            <select id="skinToneCategory" class="ink-mixer__select">
+                                <option value="">-- Select Skin Tone --</option>
+                                <option value="light_caucasian">Light Caucasian</option>
+                                <option value="medium_caucasian">Medium Caucasian</option>
+                                <option value="olive">Olive / Mediterranean</option>
+                                <option value="asian">East Asian</option>
+                                <option value="south_asian">South Asian / Indian</option>
+                                <option value="hispanic">Hispanic / Latino</option>
+                                <option value="light_brown">Light Brown</option>
+                                <option value="medium_brown">Medium Brown</option>
+                                <option value="dark_brown">Dark Brown</option>
+                                <option value="deep_brown">Deep Brown / Black</option>
+                            </select>
+                        </div>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__label">Undertone</label>
+                            <select id="skinUndertone" class="ink-mixer__select">
+                                <option value="neutral">Neutral</option>
+                                <option value="warm">Warm (more yellow)</option>
+                                <option value="cool">Cool (more blue/pink)</option>
+                            </select>
+                        </div>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__label">Volume Needed (ml)</label>
+                            <input type="number" id="skinVolume" class="ink-mixer__input" min="1" step="1" value="5">
+                        </div>
+
+                        <button id="generateSkinToneBtn" class="ink-mixer__btn ink-mixer__btn--primary">
+                            🎨 Generate Skin Tone Formulas
+                        </button>
+
+                        <div id="skinToneResults" class="ink-mixer__skin-tone-results" style="display: none;">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab 4: Gray Wash Calculator -->
+                <div id="tab-gray-wash" class="ink-mixer__tab-content">
+                    <section class="ink-mixer__section">
+                        <h2 class="ink-mixer__section-title">Gray Wash Calculator</h2>
+                        <p class="ink-mixer__helper-text">Calculate precise black-to-water ratios for any gray value</p>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__label">Gray Value (% Black)</label>
+                            <div class="ink-mixer__slider-container">
+                                <input type="range" id="grayPercentage" class="ink-mixer__slider" min="5" max="90" step="5" value="50">
+                                <span id="grayPercentageValue" class="ink-mixer__slider-value">50%</span>
+                            </div>
+                        </div>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__label">Total Volume (ml)</label>
+                            <input type="number" id="grayVolume" class="ink-mixer__input" min="1" step="1" value="10">
+                        </div>
+
+                        <div class="ink-mixer__form-group">
+                            <label class="ink-mixer__checkbox-label">
+                                <input type="checkbox" id="useWitchHazel">
+                                <span>Include Witch Hazel (30% of diluent)</span>
+                            </label>
+                        </div>
+
+                        <button id="calculateGrayBtn" class="ink-mixer__btn ink-mixer__btn--primary">
+                            🌫️ Calculate Gray Wash
+                        </button>
+
+                        <div id="grayWashResults" class="ink-mixer__gray-wash-results" style="display: none;">
+                            <!-- Populated by JavaScript -->
+                        </div>
+
+                        <!-- Gray Wash Shade Ladder -->
+                        <div class="ink-mixer__shade-ladder">
+                            <h3>Quick Gray Shade Ladder</h3>
+                            <p class="ink-mixer__helper-text">Click any shade to calculate formula</p>
+                            <div class="ink-mixer__shade-ladder-grid">
+                                <div class="ink-mixer__shade-card" data-gray="10">
+                                    
+                                    <span>10%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="20">
+                                    
+                                    <span>20%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="30">
+                                    
+                                    <span>30%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="40">
+                                    
+                                    <span>40%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="50">
+                                    
+                                    <span>50%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="60">
+                                    
+                                    <span>60%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="70">
+                                    
+                                    <span>70%</span>
+                                </div>
+                                <div class="ink-mixer__shade-card" data-gray="80">
+                                    
+                                    <span>80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab 5: Color Theory -->
+                <div id="tab-color-wheel" class="ink-mixer__tab-content">
+                    <section class="ink-mixer__section">
+                        <h2 class="ink-mixer__section-title">Color Theory for Tattoo Artists</h2>
+
+                        <div class="ink-mixer__color-theory">
+                            <div class="ink-mixer__theory-section">
+                                <h3>🎨 Primary Colors</h3>
+                                <div class="ink-mixer__color-theory-grid">
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Red</h4>
+                                        <p>Strong tinting power. Mix with yellow for oranges, blue for purples.</p>
+                                    </div>
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Yellow</h4>
+                                        <p>Weakest opacity. Need 2-3x more than other colors. Mix with blue for greens.</p>
+                                    </div>
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Blue</h4>
+                                        <p>STRONGEST color. Add in tiny amounts - very easy to overpower mixes.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ink-mixer__theory-section">
+                                <h3>🎡 Secondary Colors</h3>
+                                <div class="ink-mixer__color-theory-grid">
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Orange</h4>
+                                        <p>Red + Yellow (1:1). Add white for peach, black for brown.</p>
+                                    </div>
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Green</h4>
+                                        <p>Blue + Yellow (1:2). More blue = cooler, more yellow = warmer.</p>
+                                    </div>
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Purple</h4>
+                                        <p>Blue + Red (2:1). Strong color, use sparingly.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ink-mixer__theory-section">
+                                <h3>⚫⚪ Neutrals</h3>
+                                <div class="ink-mixer__color-theory-grid">
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>Black</h4>
+                                        <p>Very strong - overpowers easily. Add in tiny amounts to darken/mute colors.</p>
+                                    </div>
+                                    <div class="ink-mixer__theory-card">
+                                        
+                                        <h4>White</h4>
+                                        <p>Lightens and desaturates. Creates tints and pastels. Can look chalky if overused.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ink-mixer__theory-section">
+                                <h3>💡 Color Theory Tips</h3>
+                                <div class="ink-mixer__tips-grid">
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>🎯 Complementary Colors</h4>
+                                        <p>Opposite colors neutralize each other. Red + Green = Brown. Blue + Orange = Gray-brown.</p>
+                                    </div>
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>🌡️ Warm vs Cool</h4>
+                                        <p>Warm: Red, yellow, orange. Cool: Blue, purple, green. Add tiny bit of cool to warm for neutral.</p>
+                                    </div>
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>🎨 Creating Skin Tones</h4>
+                                        <p>Base: White + Yellow + Red + touch of Blue. Adjust yellow for warmth, red for rosiness.</p>
+                                    </div>
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>🌫️ Muting Colors</h4>
+                                        <p>Add complementary color or tiny bit of black to reduce vibrancy.</p>
+                                    </div>
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>⚡ Tinting Strength</h4>
+                                        <p>Strongest to weakest: Blue > Black > Red > Purple > Green > Orange > White > Yellow.</p>
+                                    </div>
+                                    <div class="ink-mixer__tip-card">
+                                        <h4>🧪 Always Test First</h4>
+                                        <p>Mix small batches and test on practice skin. Skin type and technique affect final color.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    
+
+<!-- Related Tools Section -->
+<section class="related-tools-section" style="padding: 2rem 1rem; background: #fff; border-top: 1px solid #eee;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1e293b;">Recommended for You</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <a href="https://poliinternational.com/coverage-calculator/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Coverage Calculator</a>
+            <a href="https://poliinternational.com/needle-selector/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Needle Selector</a>
+            <a href="https://poliinternational.com/stencil-calculator/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Stencil Calculator</a>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://poliinternational.com/tools/" style="color: #64748b; text-decoration: underline; font-size: 0.9rem;">View All 17 Free Tools</a>
+        </div>
+    </div>
+</section>
+
+<!-- GEO Semantic Block -->
+<aside class="geo-summary-block" style="background: #f8fafc; border-left: 4px solid #0693e3; padding: 1.5rem; margin: 2rem 0; font-style: italic; color: #334155; border-radius: 0 8px 8px 0;">
+    <p style="margin: 0; line-height: 1.6;">Pro Artist Insight: Proper planning is the mark of a master. Integrating precision calculations into your workflow ensures consistent results and high-quality healing for every client. Use this tool to bridge the gap between artistic vision and technical execution.</p>
+</aside>
+
+</main>
+
+    <!-- MORE TOOLS NAVIGATION (Required on ALL tools) -->
+        <!-- MORE TOOLS NAVIGATION -->
+    <!-- MORE TOOLS NAVIGATION -->
+    <section class="inkmixer__more-tools">
+        <div class="inkmixer__container" style="text-align: center; padding: 2rem 1rem;">
+            <p style="font-size: 1.05rem; margin: 0; color: #666;">
+                <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;">
+                    Explore all our free professional tools →
+                </a>
+            </p>
+        </div>
+    </section>
+
+
+    <!-- COMMUNITY FEEDBACK SECTION -->
+    <section class="community-feedback">
+        <div class="container">
+            <div class="feedback-card">
+                <div class="feedback-header">
+                    <h2 class="feedback-title">💬 Help Us Build Better Tools, Friend!</h2>
+                    <p class="feedback-subtitle">
+                        Hey there, fellow body art enthusiast! Whether you're a professional tattooist, piercer, or someone who loves body art as much as we do – we're all in this together.
+                        Our passion doesn't get much support out there, so let's stick together and build the best tools to help our community thrive!
+                    </p>
+                    <p class="feedback-callout">
+                        <strong>Your feedback matters!</strong> Found something useful? Got ideas for improvements? We're all ears!
+                        Help us make this tool even better for everyone in our body art family.
+                    </p>
+                </div>
+
+                <form class="feedback-form" id="feedbackForm">
+                    <div class="feedback-form-grid">
+                        <div class="form-group">
+                            <label for="userEmail" class="form-label">Your Email (so we can reply!)</label>
+                            <input type="email" id="userEmail" name="userEmail" class="form-input"
+                                   placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userRole" class="form-label">You are a...</label>
+                            <select id="userRole" name="userRole" class="form-select" required>
+                                <option value="">Choose one</option>
+                                <option value="tattoo_artist">Tattoo Artist</option>
+                                <option value="piercer">Professional Piercer</option>
+                                <option value="shop_owner">Shop Owner</option>
+                                <option value="apprentice">Apprentice</option>
+                                <option value="enthusiast">Body Art Enthusiast/Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackText" class="form-label">Share Your Thoughts, Ideas, or Suggestions</label>
+                        <textarea id="feedbackText" name="feedbackText" class="form-textarea"
+                                  placeholder="What do you love? What could be better? Any features you'd like to see? We genuinely want to hear from you!"
+                                  rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="feedback-submit-btn">
+                            <span class="btn-icon">✉️</span>
+                            <span class="btn-text">Send Feedback</span>
+                        </button>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div class="feedback-message feedback-message--success" id="feedbackSuccess" style="display: none;">
+                        <strong>🎉 Thank you, friend!</strong> Your feedback has been sent. We'll read it carefully and get back to you soon!
+                    </div>
+                    <div class="feedback-message feedback-message--error" id="feedbackError" style="display: none;">
+                        <strong>😔 Oops!</strong> Something went wrong. Please try again or email us directly at patrick@poli-international.com
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTURE SECTION -->
+    <section class="ink-mixer__email-section">
+        <div class="ink-mixer__container">
+            <div class="ink-mixer__email-box">
+                <h2 class="ink-mixer__email-title">🔔 Get Notified of New Tools!</h2>
+                <p class="ink-mixer__email-subtitle">Be first to know when we launch new free tools for tattoo professionals.</p>
+
+                <form id="footer-email-form" class="ink-mixer__email-form" data-location="footer">
+                    <div class="ink-mixer__email-input-group">
+                        <input type="email"
+                               id="footer-email-input"
+                               class="ink-mixer__email-input"
+                               placeholder="Your email address"
+                               required
+                               aria-label="Email address">
+                        <button type="submit" class="ink-mixer__email-submit">Notify Me</button>
+                    </div>
+                    <p class="ink-mixer__email-success" id="footer-email-success" style="display: none;">
+                        ✅ Thanks! We'll notify you when new tools launch!
+                    </p>
+                    <p class="ink-mixer__email-error" id="footer-email-error" style="display: none;">
+                        ❌ Please enter a valid email address.
+                    </p>
+                    <div class="ink-mixer__email-trust">
+                        <span>✅ Free tool updates only</span>
+                        <span>✅ No spam</span>
+                        <span>✅ Unsubscribe anytime</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Embed Modal (Required on ALL tools) -->
+    <div id="embedModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Embed This Tool</h2>
+            <p>Copy this code to embed the tool on your website:</p>
+            <textarea id="embedCode" readonly></textarea>
+            <button id="copyEmbedCode" class="copy-btn">Copy Code</button>
+        </div>
+    </div>
+
+    <!-- File Import Input (Hidden) -->
+    <input type="file" id="importFileInput" accept=".json" style="display: none;">
+
+    <!-- Scripts -->
+    <script src="js/ink-database.js"></script>
+    <script src="js/formulas.js"></script>
+    <script src="js/library.js"></script>
+    <script src="js/mixer.js"></script>
+    <script src="js/feedback.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- Hide header when embedded in iframe -->
+    <script>
+        // Detect if page is loaded in iframe and hide header
+        if (window.self !== window.top) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var header = document.querySelector('.site-header');
+                if (header) {
+                    header.style.display = 'none';
+                }
+                // Also hide tool title section if present
+                var toolTitle = document.querySelector('.tool-title-section');
+                if (toolTitle) {
+                    toolTitle.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<!-- AUTOMATIC IFRAME CONTENT HIDER (ADDED BY ANTIGRAVITY) -->
+<script>
+    if (window.self !== window.top) {
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectors = ['.breadcrumb-nav', '.site-header', '.site-footer', '.equip-checker__header', 
+                '.equip-checker__footer', '.tool-title-section', '.more-tools-section',
+                '.feedback-section', '.related-tools-section', '.geo-summary-block',
+                '.needle-selector__header', '.needle-selector__footer', 
+                '.needle-selector__more-tools', '.community-feedback',
+                '.poli-footer', '.share-card', '.need-support-card', '.explore-all-card'];
+            selectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => el.style.display = 'none');
+            });
+            // Force reset body margins for embed
+            document.body.style.paddingTop = '0';
+            document.body.style.marginTop = '0';
+            document.body.style.paddingBottom = '0';
+            document.body.style.marginBottom = '0';
+            
+            
+/* Center align tool headers when in iframe */
+if (window.self !== window.top) {
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Center the entire header section */
+        [class*="__header-content"],
+        [class*="__title-group"],
+        [class*="__header-buttons"] {
+            text-align: center !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        /* Center H2 headings */
+        [class*="__header"] h2,
+        [class*="__title-group"] h2,
+        header h2 {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center subtitles/descriptions */
+        [class*="__subtitle"],
+        [class*="__header"] p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center button containers */
+        [class*="__header-buttons"] {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+        });
+    }
+</script>
+
+</body>
+</html>
