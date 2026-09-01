@@ -415,44 +415,13 @@ p, span, div, label, input, textarea, select {
   transform: scale(1.05);
 }
 
-/* Ko-fi Button */
-.ink-mixer__kofi-button {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: #FF5E5B;
-  color: white;
-  border: none;
-  border-radius: var(--border-radius);
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.9rem;
-  text-decoration: none;
-}
+/
 
-.ink-mixer__kofi-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  background: #FF4E4B;
-}
 
-.kofi-icon {
-  font-size: 1.1rem;
-  line-height: 1;
-}
 
-.kofi-text {
-  white-space: nowrap;
-}
 
-/* Hide kofi text on small screens */
-@media (max-width: 480px) {
-  .kofi-text {
-    display: none;
-  }
-}
+
+
 
 /* =====================================================
    MAIN CONTENT
@@ -1468,20 +1437,11 @@ p, span, div, label, input, textarea, select {
   font-weight: 500;
 }
 
-.ink-mixer__kofi {
-  display: inline-block;
-  transition: var(--transition);
-}
 
-.ink-mixer__kofi:hover {
-  transform: scale(1.05);
-}
 
-.ink-mixer__kofi-img {
-  height: 48px;
-  width: auto;
-  border-radius: 8px;
-}
+
+
+
 
 .ink-mixer__footer-info {
   text-align: center;
@@ -1502,25 +1462,9 @@ p, span, div, label, input, textarea, select {
   line-height: 1.5;
 }
 
-/* Embed Page Ko-fi Button */
-.embed-kofi-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background: #FF5E5B;
-  color: white;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  transition: var(--transition);
-}
+/
 
-.embed-kofi-btn:hover {
-  background: #E54845;
-  transform: scale(1.05);
-}
+
 
 /* =====================================================
    MODAL (Required by SKILL.md)
