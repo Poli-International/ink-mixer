@@ -413,3 +413,7 @@ function getFormula(category, formulaKey) {
   }
   return null;
 }
+
+window.commonFormulas = commonFormulas;
+window.getFormulasCategory = getFormulasCategory;
+window.getFormula = getFormula;
