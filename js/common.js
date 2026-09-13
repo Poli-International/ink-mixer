@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (textarea) {
         const cleanUrl = window.location.href.split('?')[0].split('#')[0];
-        textarea.value = `<iframe src="${cleanUrl}" width="100%" height="800" frameborder="0" style="border:1px solid #333; border-radius:12px;"></iframe>`;
+        textarea.value = `<iframe src="${cleanUrl}" width="100%" height="800" frameborder="0" style="border-radius:12px;"></iframe>`;
     }
 
     if (embedBtn && modal) {
@@ -103,29 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = '✅ Copied!';
                 setTimeout(() => copyBtn.innerHTML = originalText, 2000);
+            }).catch(() => {
+                // Clipboard API refused (common inside an iframe): the text is
+                // already selected, so fall back to the legacy copy command.
+                document.execCommand('copy');
             });
         });
     }
-
-    // ==========================================
-    // EMAIL FORM SIMULATION
-    // ==========================================
-    const emailForms = document.querySelectorAll('.email-form');
-    emailForms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const input = form.querySelector('input');
-            const btn = form.querySelector('button');
-            const originalText = btn.textContent;
-            
-            btn.textContent = '✅ Subscribed!';
-            btn.disabled = true;
-            input.value = '';
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }, 3000);
-        });
-    });
 });
