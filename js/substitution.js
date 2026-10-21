@@ -121,7 +121,7 @@
         btn.style.marginBottom = '0.5rem';
         const colorName = c.shadeName || c.color;
         const brand = c.brand ? ` (${c.brand})` : '';
-        btn.innerHTML = (outOfStockIndex === idx ? '' : '') + `<strong>${colorName}${brand}</strong>: ${c.parts} ${_t('substitution.parts', {}, 'parts')}`;
+        btn.innerHTML = (outOfStockIndex === idx ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg> ' : '') + `<strong>${colorName}${brand}</strong>: ${c.parts} ${_t('substitution.parts', {}, 'parts')}`;
         btn.onclick = () => {
           outOfStockIndex = idx;
           updateSubstitutionView();
@@ -224,7 +224,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
             ${selectedFormula.colors.map((c, idx) => `
               <li style="padding: 0.35rem 0; border-bottom: 1px solid var(--border-secondary); display: flex; justify-content: space-between; align-items: center; ${idx === outOfStockIndex ? 'text-decoration: line-through; color: var(--color-red, #dc2626); font-weight: 600;' : 'color: var(--text-primary);'}">
-                <span>${idx === outOfStockIndex ? '' : ''}${c.shadeName || c.color} ${c.brand ? `(${c.brand})` : ''}</span>
+                <span>${idx === outOfStockIndex ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg> ' : ''}${c.shadeName || c.color} ${c.brand ? `(${c.brand})` : ''}</span>
                 <strong>${c.parts} ${_t('substitution.parts', {}, 'parts')}</strong>
               </li>
             `).join('')}
@@ -249,7 +249,7 @@
           <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem;">
             ${substitutedColors.map((c, idx) => `
               <li style="padding: 0.35rem 0; border-bottom: 1px solid var(--border-secondary); display: flex; justify-content: space-between; align-items: center; ${idx === outOfStockIndex ? 'color: var(--color-blue, #2563eb); font-weight: 700;' : 'color: var(--text-primary);'}">
-                <span>${idx === outOfStockIndex ? '' : ''}${c.shadeName || c.color} ${c.brand ? `(${c.brand})` : ''}</span>
+                <span>${idx === outOfStockIndex ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-refresh></use></svg> ' : ''}${c.shadeName || c.color} ${c.brand ? `(${c.brand})` : ''}</span>
                 <strong>${c.parts} ${_t('substitution.parts', {}, 'parts')}</strong>
               </li>
             `).join('')}
